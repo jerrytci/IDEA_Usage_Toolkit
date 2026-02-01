@@ -1,0 +1,78 @@
+{
+  "name": "idea-usage-toolkit",
+  "displayName": "IDEA Usage Toolkit",
+  "description": "Brings IntelliJ IDEA's usage search experience to VS Code (QuickPick style)",
+  "version": "1.1.0",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "publisher": "rejerry",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:idea-usage-toolkit.showCallers",
+    "onLanguage:java",
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:python",
+    "onLanguage:go",
+    "onLanguage:csharp"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "idea-usage-toolkit.showCallers",
+        "title": "Show Usages (IDEA Style)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "idea-usage-toolkit.showCallers",
+          "when": "editorTextFocus",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "idea-usage-toolkit.showCallers",
+        "key": "alt+x",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "IDEA Usage Toolkit",
+      "properties": {}
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "package": "npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "typescript": "^4.9.4",
+    "eslint": "^8.39.0",
+    "@vscode/vsce": "^2.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rejerry/idea-usage-toolkit"
+  },
+  "keywords": [
+    "intellij",
+    "idea",
+    "call hierarchy",
+    "references",
+    "popup"
+  ]
+}

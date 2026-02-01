@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-vsce",
+        "ms-vscode.vscode-extensions",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-json"
+    ],
+    "unwantedRecommendations": []
+}

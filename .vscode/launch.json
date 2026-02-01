@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "调试rejerry拓展",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ],
+            // --- 增强配置项 ---
+            "outputCapture": "std", // 捕获 stdout/stderr，确保 console.log 不遗漏
+            "internalConsoleOptions": "openOnSessionStart", // 启动调试时自动弹出调试控制台
+            "sourceMaps": true, // 明确开启源码映射，方便点击日志跳转回 .ts 文件
+            "autoAttachChildProcesses": true, // 如果插件启动了子进程，自动附加调试
+            // 明确指定使用 watch 任务，确保修改代码后刷新窗口即生效
+            "preLaunchTask": "pnpm: watch"
+        }
+    ]
+}

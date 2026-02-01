@@ -1,0 +1,67 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "pnpm: compile",
+            "type": "shell",
+            "command": "pnpm run compile",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": "$tsc",
+            "detail": "编译TypeScript源代码"
+        },
+        {
+            "label": "pnpm: watch",
+            "type": "shell",
+            "command": "pnpm run watch",
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": "$tsc-watch",
+            "detail": "监视TypeScript文件变化并自动编译"
+        },
+        {
+            "label": "pnpm: package",
+            "type": "shell",
+            "command": "pnpm run package",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "detail": "打包VSIX扩展文件"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rimraf out",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "detail": "清理编译输出目录"
+        }
+    ]
+}
